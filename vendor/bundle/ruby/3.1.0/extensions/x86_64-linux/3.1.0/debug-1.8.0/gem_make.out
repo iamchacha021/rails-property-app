@@ -1,0 +1,16 @@
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+/usr/share/rvm/rubies/ruby-3.1.2/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230627-17698-dc9ivg sitelibdir\=./.gem.20230627-17698-dc9ivg clean
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230627-17698-dc9ivg sitelibdir\=./.gem.20230627-17698-dc9ivg
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230627-17698-dc9ivg sitelibdir\=./.gem.20230627-17698-dc9ivg install
+/bin/install -m 0755 debug.so ./.gem.20230627-17698-dc9ivg/debug

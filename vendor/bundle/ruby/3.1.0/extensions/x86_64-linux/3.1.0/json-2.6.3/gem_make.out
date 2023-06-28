@@ -1,0 +1,13 @@
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+/usr/share/rvm/rubies/ruby-3.1.2/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-jgdcnm sitelibdir\=./.gem.20230628-16901-jgdcnm clean
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-jgdcnm sitelibdir\=./.gem.20230628-16901-jgdcnm
+make: Nothing to be done for 'all'.
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-jgdcnm sitelibdir\=./.gem.20230628-16901-jgdcnm install

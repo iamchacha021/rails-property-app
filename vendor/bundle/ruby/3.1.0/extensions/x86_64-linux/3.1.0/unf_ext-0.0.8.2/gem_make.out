@@ -1,0 +1,16 @@
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/usr/share/rvm/rubies/ruby-3.1.2/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-odwaz sitelibdir\=./.gem.20230628-16901-odwaz clean
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-odwaz sitelibdir\=./.gem.20230628-16901-odwaz
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-odwaz sitelibdir\=./.gem.20230628-16901-odwaz install
+/bin/install -m 0755 unf_ext.so ./.gem.20230628-16901-odwaz

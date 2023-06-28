@@ -1,0 +1,24 @@
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/aliyun-sdk-0.8.0/ext/crcx
+/usr/share/rvm/rubies/ruby-3.1.2/bin/ruby -I /usr/share/rvm/rubies/ruby-3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/aliyun-sdk-0.8.0/ext/crcx
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-z481es sitelibdir\=./.gem.20230628-16901-z481es clean
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/aliyun-sdk-0.8.0/ext/crcx
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-z481es sitelibdir\=./.gem.20230628-16901-z481es
+compiling crc64_ecma.c
+compiling crcx.c
+crcx.c: In function ‘Init_crcx’:
+crcx.c:3:6: warning: old-style function definition [-Wold-style-definition]
+    3 | void Init_crcx(){
+      |      ^~~~~~~~~
+crcx.c: At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+linking shared-object aliyun/crcx.so
+
+current directory: /home/chacha/Development/code/projects/real-estate/mahao/vendor/bundle/ruby/3.1.0/gems/aliyun-sdk-0.8.0/ext/crcx
+make DESTDIR\= sitearchdir\=./.gem.20230628-16901-z481es sitelibdir\=./.gem.20230628-16901-z481es install
+/bin/install -m 0755 crcx.so ./.gem.20230628-16901-z481es/aliyun

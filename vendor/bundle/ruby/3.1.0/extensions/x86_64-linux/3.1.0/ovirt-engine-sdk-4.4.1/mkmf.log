@@ -1,0 +1,6 @@
+find_executable: checking for xml2-config... -------------------- no
+
+--------------------
+
+LD_LIBRARY_PATH=.:/usr/share/rvm/rubies/ruby-3.1.2/lib pkg-config --exists libxml2
+package configuration for libxml2 is not found
