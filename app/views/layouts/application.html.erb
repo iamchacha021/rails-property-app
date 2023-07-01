@@ -15,8 +15,8 @@
     <% if ['public', 'devise', 'sessions'].include?(controller.controller_name) %>
       <header>
         <%= render 'layouts/nav/public' %>
-        <% yield %>
       </header>
+      <% yield %>
     <%else%>
       <%= render 'layouts/nav/dashboard'%>
     <%end%>

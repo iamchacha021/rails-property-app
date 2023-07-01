@@ -1,0 +1,13 @@
+<% @properties.each do |property| %>
+    <div class='col-4'>
+        <img src=<%= property.photo%> alt='img' />
+        <h5><%= link_to property.name, property_path(property) %></h5>
+        <p><%= property.address %></p>
+        <div class='amenities'>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+            <span> </span>
+        </div>
+    </div>
+<% end %>

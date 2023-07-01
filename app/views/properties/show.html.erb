@@ -1,10 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-8'>
 
-<%= render @property %>
+      <p style="color: green"><%= notice %></p>
+      <%# <img src=<%=property.photo%> /> %>
 
-<div>
-  <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> |
-  <%= link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
+      <%= render @property %>
 
-  <%= button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
+      <div>
+        <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> |
+        <%= link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
+
+        <%= button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
+      </div>
+    </div>
+    <div class='col-4'>
+      <%= render 'properties/agent_details' %>
+      Agent Info
+    </div>
+  </div>
+
 </div>
