@@ -1,13 +1,18 @@
-<% @properties.each do |property| %>
-    <div class='col-4'>
-        <img src=<%= property.photo%> alt='img' />
-        <h5><%= link_to property.name, property_path(property) %></h5>
-        <p><%= property.address %></p>
-        <div class='amenities'>
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
+
+<div class='row'>
+    <% @properties.each do |property| %>
+        <div class='card col-12 col-md-4 col-xl-3 col-xxl-2 text-start shadow m-3'>
+            <img src=<%= property.photo%> alt='img' />
+            <div class='card-body'>
+                <h5><%= link_to property.name, property_path(property) %></h5>
+                <p><%= property.address %></p>
+                <div class='amenities'>
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                </div>
+            </div>
         </div>
-    </div>
-<% end %>
+    <% end %>
+</div>
