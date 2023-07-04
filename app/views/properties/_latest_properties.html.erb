@@ -1,18 +1,25 @@
-
+<style>
+  .card-img {
+    height: 200px; /* Adjust the height as per your requirement */
+    object-fit: cover;
+  }
+</style>
 <div class='row'>
-    <% @properties.each do |property| %>
-        <div class='card col-12 col-md-4 col-xl-3 col-xxl-2 text-start shadow m-3'>
-            <img src=<%= property.photo%> alt='img' />
+  <% @properties.each do |property| %>
+    <div class='card col-12 col-md-4 col-xl-3 col-xxl-3 text-start shadow  mx-5 my-4'>
+        <%= link_to property_path(property) do %>
+            <%= image_tag property.photo, alt: 'img', class: 'card-img' %>
             <div class='card-body'>
-                <h5><%= link_to property.name, property_path(property) %></h5>
+                <h5><%= property.name %></h5>
                 <p><%= property.address %></p>
                 <div class='amenities'>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 </div>
             </div>
-        </div>
-    <% end %>
+        <% end %>
+    </div>
+  <% end %>
 </div>

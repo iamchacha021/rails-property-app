@@ -3,20 +3,20 @@
     <div class='col-8'>
 
       <p style="color: green"><%= notice %></p>
-      <%# <img src=<%=property.photo%> /> %>
+      
 
       <%= render @property %>
 
       <div>
-        <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> |
-        <%= link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
+        <% link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
+        <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
 
-        <%= button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
+        <% button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
       </div>
-    </div>
-    <div class='col-4'>
-      <%= render 'properties/agent_details' %>
-      Agent Info
+      <div class='col-4'>
+        <p>Agent Info</p>
+        <%= render 'properties/agent_details' %>
+      </div>
     </div>
   </div>
 
