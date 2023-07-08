@@ -1,0 +1,36 @@
+Arguments: 
+  /home/chacha/.nvm/versions/node/v19.0.1/bin/node /home/chacha/.nvm/versions/node/v19.0.1/bin/yarn add @fontawesome/fontawesome-free
+
+PATH: 
+  /usr/share/rvm/gems/ruby-3.1.2/bin:/home/chacha/.rvm/bin:/home/chacha/.vscode-server/bin/660393deaaa6d1996740ff4880f1bad43768c814/bin/remote-cli:/usr/share/rvm/gems/ruby-3.1.2/bin:/usr/share/rvm/gems/ruby-3.1.2@global/bin:/usr/share/rvm/rubies/ruby-3.1.2/bin:/usr/share/rvm/bin:/home/chacha/.rvm/bin:/home/chacha/.nvm/versions/node/v19.0.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin:/mnt/c/Users/user/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/user/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.0.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@fontawesome%2ffontawesome-free: Not found
+      at params.callback [as _callback] (/home/chacha/.nvm/versions/node/v19.0.1/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/home/chacha/.nvm/versions/node/v19.0.1/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/home/chacha/.nvm/versions/node/v19.0.1/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/home/chacha/.nvm/versions/node/v19.0.1/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

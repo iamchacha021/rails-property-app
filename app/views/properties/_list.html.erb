@@ -1,0 +1,37 @@
+<style>
+  .card-img {
+    height: 200px; /* Adjust the height as per your requirement */
+    object-fit: cover;
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-link:hover,
+  .card-link:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<div class='row'>
+  <% properties.each do |property| %>
+    <div class='card col-12 col-md-4 col-xl-3 col-xxl-3 text-start shadow mx-5 my-4'>
+      <%= link_to property_path(property), class: 'card-link' do %>
+        <%= image_tag property.photo, alt: 'img', class: 'card-img' %>
+        <div class='card-body'>
+          <h5><%= property.name %></h5>
+          <p><i class="bi bi-pin-map-fill"></i> <%= property.address %></p>
+          <div class='amenities'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
