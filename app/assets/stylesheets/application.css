@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ /* #prop-details {
+    height: 100px;
+    overflow: hidden;
+ }
+
+ #prop-details.open {
+    height: auto;
+  } */

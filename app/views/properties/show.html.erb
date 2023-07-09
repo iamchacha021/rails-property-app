@@ -1,3 +1,51 @@
+    <%# <style>
+      .prop-details {
+        height: 100px;
+        overflow: hidden;
+      }
+    
+      .prop-details.open {
+        height: auto;
+      }
+    </style> %>
+
+
+
+<script>
+  // Custom JavaScript code
+  document.addEventListener('DOMContentLoaded', function() {
+    // Your code here
+    let details = document.getElementById('new-details');
+    details.addEventListener('click', () => {
+      console.log('clicked');
+    });
+
+
+  const exampleModal = document.getElementById('exampleModal')
+  if (exampleModal) {
+    exampleModal.addEventListener('show.bs.modal', event => {
+      // Button that triggered the modal
+      const button = event.relatedTarget
+      // Extract info from data-bs-* attributes
+      const recipient = button.getAttribute('data-bs-whatever')
+      // If necessary, you could initiate an Ajax request here
+      // and then do the updating in a callback.
+
+      // Update the modal's content.
+      const modalTitle = exampleModal.querySelector('.modal-title')
+      const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+      modalTitle.textContent = `New message to ${recipient}`
+      modalBodyInput.value = recipient
+    })
+  }
+
+
+  });
+</script>
+
+
+
 <div class='container'>
   <div class='row'>
     <div class='col-8'>
@@ -18,9 +66,12 @@
       <h3><%= @property.name%></h3>
       <hr>
       <h5>Property Description </h5>
-      <p><%= @property.details %></p>
+      <div class='prop-details mb-1' class='mb-1'>
+        <p><%= simple_format @property.details %></p>
+      </div>
       <div>
-        <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
+      <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
+        <% link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
         <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
 
         <% button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
@@ -29,6 +80,7 @@
         <h2>Agent Info</h2>
         <%= render 'properties/agent_details' %>
       </div>
+      <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBw0WZ_C1sw6lYJhxYk_LJJCI2uM9GW8IA&q=<%=@property.address.to_param %>' allowfullscreen ></iframe>
     </div>
   </div>
 
@@ -37,7 +89,39 @@
 <section id='latest-properties'>
   <div class='container' >
     <div class='row'>
+      <h3>Other Houses by This Agent</h3>
       <%= render 'properties/list', properties: @agent_properties %>
     </div>
   </div>
 </section>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>

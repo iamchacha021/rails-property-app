@@ -22,6 +22,11 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
     </div>
 
+      <div class="field">
+        <%= f.label :telephone %><br />
+        <%= f.text_field :telephone, autofocus: true, autocomplete: "telephone" %>
+      </div>
+
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
