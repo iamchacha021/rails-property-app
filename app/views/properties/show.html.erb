@@ -18,36 +18,7 @@
 
 
 
-<script>
-  // Custom JavaScript code
-  document.addEventListener('DOMContentLoaded', function() {
-    // Your code here
-    let details = document.getElementById('new-details');
-    details.addEventListener('click', () => {
-      console.log('clicked');
-    });
 
-
-  const contactModal = document.getElementById('contactModal')
-  if (contactModal) {
-    contactModal.addEventListener('click', event => {
-      console.log('super clicked')
-      // Button that triggered the modal
-      const button = event.relatedTarget
-      // Extract info from data-bs-* attributes
-      const recipient = button.getAttribute('data-bs-whatever')
-      // If necessary, you could initiate an Ajax request here
-      // and then do the updating in a callback.
-
-      // Update the modal's content.
-      const modalTitle = exampleModal.querySelector('.modal-title')
-      const modalBodyInput = exampleModal.querySelector('.modal-body input')
-    })
-  }
-
-
-  });
-</script>
 
 
 
@@ -85,7 +56,7 @@
       </div>
       <div>
         <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
-        <% link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
+        <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
         <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
 
         <% button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
@@ -93,43 +64,50 @@
     </div>
   </div>
 
-</div>
-
-<section id='latest-properties'>
-  <div class='container' >
-    <div class='row'>
-      <h3>Other Houses by This Agent</h3>
-      <%= render 'properties/list', properties: @agent_properties %>
-    </div>
-  </div>
-</section>
-
-
-
-
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message for <%= @agent.first_name%> </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+  <section id='latest-properties'>
+    <div class='container' >
+      <div class='row'>
+        <h3>Other Houses by This Agent</h3>
+        <%= render 'properties/list', properties: @agent_properties %>
       </div>
     </div>
-  </div>
+  </section>
+
+  
+  <script>
+    // Custom JavaScript code
+    document.addEventListener('DOMContentLoaded', function() {
+      // Your code here
+      let details = document.getElementById('new-details');
+      details.addEventListener('click', () => {
+        console.log('clicked');
+
+      });
+
+
+    const contactModal = document.getElementById('contactModal')
+    if (contactModal) {
+      contactModal.addEventListener('click', event => {
+        console.log('super clicked')
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const recipient = button.getAttribute('data-bs-whatever')
+        // If necessary, you could initiate an Ajax request here
+        // and then do the updating in a callback.
+
+        // Update the modal's content.
+        const modalTitle = exampleModal.querySelector('.modal-title')
+        const modalBodyInput = exampleModal.querySelector('.modal-body input')
+      })
+    }
+
+
+    });
+  </script>
 </div>
+
+
+
+
+

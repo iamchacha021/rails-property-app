@@ -1,20 +1,6 @@
-<%# <script>
-let telephone = document.getElementById('#show-tel')
-telephone.addEventListener('click', ()=>{
-    this.text(this.data('tel'))
-})
-</script> %>
-
 <div class=''>
-    <h4><%= @agent.first_name %></h4>
-    
-    <button class='btn btn-info' id='show-tel' data-tel='<%= @agent.telephone %>'>
-    <i class="bi bi-telephone-outbound-fill"></i>
-        Call
-    </button>
-    <p><%=@agent.telephone%></p>
-    <button class='btn btn-success' data-bs-toggle="modal" data-bs-target="#contactModal">
-        Email
-        <%= @agent.email %>
-    </button>
+  <h5>Name: <%= @agent.first_name %> <%= @agent.last_name%> </h5>
+  
+  <h5>Tel: <%= @agent.telephone%> </h5>
+  <h5>Email: <%= @agent.email %></h5>
 </div>
