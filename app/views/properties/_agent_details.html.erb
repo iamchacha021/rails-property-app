@@ -13,7 +13,7 @@ telephone.addEventListener('click', ()=>{
         Call
     </button>
     <p><%=@agent.telephone%></p>
-    <button class='btn btn-success'>
+    <button class='btn btn-success' data-bs-toggle="modal" data-bs-target="#contactModal">
         Email
         <%= @agent.email %>
     </button>

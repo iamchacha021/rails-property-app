@@ -21,9 +21,10 @@
     });
 
 
-  const exampleModal = document.getElementById('exampleModal')
-  if (exampleModal) {
-    exampleModal.addEventListener('show.bs.modal', event => {
+  const contactModal = document.getElementById('contactModal')
+  if (contactModal) {
+    contactModal.addEventListener('click', event => {
+      console.log('super clicked')
       // Button that triggered the modal
       const button = event.relatedTarget
       // Extract info from data-bs-* attributes
@@ -34,9 +35,6 @@
       // Update the modal's content.
       const modalTitle = exampleModal.querySelector('.modal-title')
       const modalBodyInput = exampleModal.querySelector('.modal-body input')
-
-      modalTitle.textContent = `New message to ${recipient}`
-      modalBodyInput.value = recipient
     })
   }
 
@@ -80,7 +78,7 @@
         <h2>Agent Info</h2>
         <%= render 'properties/agent_details' %>
       </div>
-      <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBw0WZ_C1sw6lYJhxYk_LJJCI2uM9GW8IA&q=<%=@property.address.to_param %>' allowfullscreen ></iframe>
+      <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://maps.google.com/maps?q=MQXM+RR5,+Ngong+Ln,+Nairobi,+Kenya&output=embed' allowfullscreen ></iframe>
     </div>
   </div>
 
@@ -95,15 +93,14 @@
   </div>
 </section>
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message for <%= @agent.first_name%> </h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
