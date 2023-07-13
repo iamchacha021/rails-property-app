@@ -1,13 +1,20 @@
-    <%# <style>
-      .prop-details {
+    <style>
+      /* .prop-details {
         height: 100px;
         overflow: hidden;
       }
     
       .prop-details.open {
         height: auto;
+      } */
+
+      .property-show-photo{
+        width: 100%;
+        height: 35rem;
       }
-    </style> %>
+
+      
+    </style>
 
 
 
@@ -46,39 +53,43 @@
 
 <div class='container'>
   <div class='row'>
-    <div class='col-8'>
+    <div class=''>
 
       <p style="color: green"><%= notice %></p>
       
 
       <% render @property %>
       <div class='mb-2'>
-        <img src=<%= @property.photo%> >
+        <img src=<%= @property.photo%> class='property-show-photo'>
       </div>
-      <small class='h6 me-4'><i class="bi bi-geo-alt-fill mx-1"></i>   <%= @property.address%></small> |
-      <span class=' mx-4'><i class="bi bi-cash-coin mx-1"></i> <%= @property.price%></span> |
-      <span class=' mx-4'><i class="bi bi-house-add-fill mx-1"></i><%= @property.roomsinteger%></span> |
-      <span class=' mx-4'><i class="bi bi-truck-front-fill"></i>   <%= @property.parking_spaces%></span>
+      <div class='d-flex justify-content-between'>
+        <div class='me-2'>
+          <small class='h6 me-4'><i class="bi bi-geo-alt-fill mx-1"></i>   <%= @property.address%></small> |
+          <span class=' mx-4'><i class="bi bi-cash-coin mx-1"></i> <%= @property.price%></span> |
+          <span class=' mx-4'><i class="bi bi-house-add-fill mx-1"></i><%= @property.roomsinteger%></span> |
+          <span class=' mx-4'><i class="bi bi-truck-front-fill"></i>   <%= @property.parking_spaces%></span>
 
-      <hr>
-      <h3><%= @property.name%></h3>
-      <hr>
-      <h5>Property Description </h5>
-      <div class='prop-details mb-1' class='mb-1'>
-        <p><%= simple_format @property.details %></p>
+          <hr>
+          <h3><%= @property.name%></h3>
+          <hr>
+          <h5>Property Description </h5>
+          <div class='prop-details mb-1' class='mb-1'>
+            <p><%= simple_format @property.details %></p>
+          </div>
+        </div>
+        <div class='col-4'>
+          <h2>Agent Info</h2>
+          <%= render 'properties/agent_details' %>
+          <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://maps.google.com/maps?q=MQXM+RR5,+Ngong+Ln,+Nairobi,+Kenya&output=embed' allowfullscreen ></iframe>
+        </div>
       </div>
       <div>
-      <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
+        <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
         <% link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
         <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
 
         <% button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
       </div>
-      <div class='col-4'>
-        <h2>Agent Info</h2>
-        <%= render 'properties/agent_details' %>
-      </div>
-      <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://maps.google.com/maps?q=MQXM+RR5,+Ngong+Ln,+Nairobi,+Kenya&output=embed' allowfullscreen ></iframe>
     </div>
   </div>
 
