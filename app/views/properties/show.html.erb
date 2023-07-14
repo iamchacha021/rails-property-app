@@ -47,19 +47,19 @@
           <div class='prop-details mb-1' class='mb-1'>
             <p><%= simple_format @property.details %></p>
           </div>
+          <div class='d-flex justify-content-between'>
+            <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
+            <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
+            <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
+
+            <%= button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
+          </div>
         </div>
-        <div class='col-4'>
+        <div class='col-4 ms-4'>
           <h2>Agent Info</h2>
           <%= render 'properties/agent_details' %>
           <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://maps.google.com/maps?q=MQXM+RR5,+Ngong+Ln,+Nairobi,+Kenya&output=embed' allowfullscreen ></iframe>
         </div>
-      </div>
-      <div>
-        <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
-        <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
-        <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
-
-        <% button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
       </div>
     </div>
   </div>
