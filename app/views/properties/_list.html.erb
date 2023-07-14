@@ -1,7 +1,8 @@
 <style>
   .card-img {
-    height: 200px; /* Adjust the height as per your requirement */
+    height: 14rem;
     object-fit: cover;
+    
   }
 
   .card-link {
@@ -18,17 +19,16 @@
 
 <div class='row'>
   <% properties.each do |property| %>
-    <div class='card col-12 col-md-4 col-xl-3 col-xxl-3 text-start shadow mx-5 my-4'>
+    <div class='card col-12 col-md-4 col-xl-3 col-xxl-3 text-start shadow mx-5 my-4 p-0'>
       <%= link_to property_path(property), class: 'card-link' do %>
         <%= image_tag property.photo, alt: 'img', class: 'card-img' %>
         <div class='card-body'>
           <h5><%= property.name %></h5>
           <p><i class="bi bi-pin-map-fill"></i> <%= property.address %></p>
           <div class='amenities'>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class=' me-2'><i class="bi bi-cash-coin mx-2"></i> <%= property.price%></span> |
+            <span class=' mx-2'><i class="bi bi-house-add-fill mx-2"></i><%= property.roomsinteger%></span> |
+            <span class=' mx-2'><i class="bi bi-truck-front-fill"></i>   <%= property.parking_spaces%></span>
           </div>
         </div>
       <% end %>
