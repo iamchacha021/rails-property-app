@@ -49,10 +49,10 @@
           </div>
           <div class='d-flex justify-content-between'>
             <%# <button class='btn btn-outline-info mt-2' id='new-details'>Show More</button> %>
-            <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
-            <% link_to "Back to properties", properties_path, class: 'btn btn-primary' %>
-
-            <%= button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
+            <% if @property.account == current_account %>
+              <%= link_to "Edit this property", edit_property_path(@property), class: 'btn btn-success' %> 
+              <%= button_to "Destroy this property", @property, method: :delete, class: 'btn btn-danger' %>
+            <% end %>
           </div>
         </div>
         <div class='col-4 ms-4'>
