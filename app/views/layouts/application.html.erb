@@ -21,14 +21,11 @@
       </header>
       
     
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
       <div class="row">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <%if account_signed_in? %>
-          <%= render 'layouts/nav/sidebar' %>
-        <%end%>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="">
           <%= yield %>
         </main>
       </div>
