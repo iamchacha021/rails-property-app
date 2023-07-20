@@ -1,17 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<style>
+  .card-img {
+    height: 27rem;
+  }
+</style>
 
-<h1>Properties</h1>
-<div class='d-flex justify-content-end'>
-  <%= link_to "Add A New House", new_property_path, class: 'h4 mt-3' %>
-  <span class='h1 me-5 mb-3'><i class="bi bi-house-door"></i></span>
-</div>
+<div class='container'>
+  <p style="color: green"><%= notice %></p>
+  <h1>My Properties</h1>
+  <div class='d-flex justify-content-end'>
+    <%= link_to "Add A New House", new_property_path, class: 'h4 mt-3' %>
+    <span class='h1 me-5 mb-3'><i class="bi bi-house-door"></i></span>
+  </div>
 
-<div id="properties">
-  <% @properties.each do |property| %>
-    <%= render property %>
-    <p>
-      <%= link_to "More...", property, class: 'btn btn-success' %>
-    </p>
-  <% end %>
+  <div id="properties" class='row'>
+    <% @properties.each do |property| %>
+      <div class='card col-12 col-sm-3 col-md-4 col-lg-5 col-xl-5 col-xxl-5 text-start shadow mx-5 my-4 p-0'>
+        <img src=<%= property.photo%> alt='property photo' class='card-img'/>
+        <div class='card-body'>
+          <h4> <%= property.name %> </h4>
+          <p class='h6'> Location: <%= property.address %> </p>
+          <p class='h6'>Price: <%= property.price %> </p>
+          <p class='h6'>Bedrooms: <%= property.roomsinteger %> </p>
+          <%= link_to "More...", property, class: 'btn btn-outline-secondary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
