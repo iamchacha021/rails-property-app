@@ -5,14 +5,9 @@
       <h1 class="display-4 fst-italic" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; color: #9E3D1F; font-weight: bold;">Search for your new house today</h1>
     </div>
 
-
-    
-    <section id='latest-properties'>
-      <div class='container p-0' >
-        <div>
-          <%= render 'properties/list', properties: @properties %>
-        </div>
-      </div>
-    </section>
+    <div class='container p-0' >
+      <%= render 'properties/list', properties: @properties %>
+    </div>
+   
 </main>
 

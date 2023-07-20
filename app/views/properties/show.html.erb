@@ -10,7 +10,7 @@
 
       .property-show-photo{
         width: 100%;
-        height: 35rem;
+        height: 40rem;
       }
 
       
@@ -23,17 +23,12 @@
 
 
 <div class=''>
-  <div class='row'>
-    <div class=''>
-
+  <div class=''>
       <p style="color: green"><%= notice %></p>
-      
-
-      <% render @property %>
       <div class='mb-2'>
         <img src=<%= @property.photo%> class='property-show-photo'>
       </div>
-      <div class='container p-2 m-0 d-flex justify-content-lg-between'>
+      <div class='container p-2 m-5 d-flex justify-content-lg-between'>
         <div class='me-5'>
           <small class='h6 me-4'><i class="bi bi-geo-alt-fill mx-1"></i>   <%= @property.address%></small> |
           <span class=' mx-4'><i class="bi bi-cash-coin mx-1"></i> <%= @property.price%></span> |
@@ -60,51 +55,12 @@
           <%= render 'properties/agent_details' %>
           <iframe class='ml-lg-4 mt-3' width='320' height='249' frameborder='0' style='border:0;' src='https://maps.google.com/maps?q=MQXM+RR5,+Ngong+Ln,+Nairobi,+Kenya&output=embed' allowfullscreen ></iframe>
         </div>
-      </div>
+    </div>
+    <div class='m-5'>
+      <h3>Other Houses by This Agent</h3>
+      <%= render 'properties/list', properties: @agent_properties %>
     </div>
   </div>
-
-  <section id='latest-properties'>
-    <div class='container' >
-      <div class='row'>
-        <h3>Other Houses by This Agent</h3>
-        <%= render 'properties/list', properties: @agent_properties %>
-      </div>
-    </div>
-  </section>
-
-  
-  <script>
-    // Custom JavaScript code
-    document.addEventListener('DOMContentLoaded', function() {
-      // Your code here
-      let details = document.getElementById('new-details');
-      details.addEventListener('click', () => {
-        console.log('clicked');
-
-      });
-
-
-    const contactModal = document.getElementById('contactModal')
-    if (contactModal) {
-      contactModal.addEventListener('click', event => {
-        console.log('super clicked')
-        // Button that triggered the modal
-        const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-        const recipient = button.getAttribute('data-bs-whatever')
-        // If necessary, you could initiate an Ajax request here
-        // and then do the updating in a callback.
-
-        // Update the modal's content.
-        const modalTitle = exampleModal.querySelector('.modal-title')
-        const modalBodyInput = exampleModal.querySelector('.modal-body input')
-      })
-    }
-
-
-    });
-  </script>
 </div>
 
 
