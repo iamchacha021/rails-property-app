@@ -1,4 +1,4 @@
-<%= form_with(model: property) do |form| %>
+<%= form_with(model: property, data: { controller: "voice-input" }) do |form| %>
   <% if property.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
@@ -42,7 +42,10 @@
 
   <div class= 'form-group mb-4'>
     <%= form.label :details, style: "display: block" %>
-    <%= form.text_area :details, class: 'form-control' %>
+    <%= form.text_area :details, data: { voice_input_target: 'input' }, class: 'form-control' %>
+    <span data-action="click->voice-input#record" style="cursor: pointer; text-decoration: underline" data-target="voice-input.startButton">
+      Start Recording
+    </span>
   </div>
 
   <div class= 'form-group mb-4'>
