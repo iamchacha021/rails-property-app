@@ -12,18 +12,30 @@
     <span class='h1 me-5 mb-3'><i class="bi bi-house-door"></i></span>
   </div>
 
-  <div id="properties" class='row'>
+  <div id="properties" class=''>
     <% @properties.each do |property| %>
-      <div class='card col-12 col-sm-3 col-md-4 col-lg-5 col-xl-5 col-xxl-5 text-start shadow mx-5 my-4 p-0'>
-        <img src=<%= property.photo%> alt='property photo' class='card-img'/>
-        <div class='card-body'>
-          <h4> <%= property.name %> </h4>
-          <p class='h6'> Location: <%= property.address %> </p>
-          <p class='h6'>Price: <%= property.price %> </p>
-          <p class='h6'>Bedrooms: <%= property.roomsinteger %> </p>
-          <%= link_to "More...", property, class: 'btn btn-outline-secondary' %>
+      <div class="card my-5" style="max-width: 70vw;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src=<%= property.photo%> alt='property photo' class='card-img'/>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class='p-3'> <%= property.name %> </h2>
+              <p class='h3 p-3'> Location: <%= property.address %> </p>
+              <p class='h3 p-3'>Price: <%= property.price %> </p>
+              <p class='h3 p-3'>Bedrooms: <%= property.roomsinteger %> </p>
+              <div class='p-3'>
+                <%= link_to "More...", property, class: 'btn btn-outline-secondary' %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+
+
+
     <% end %>
   </div>
 </div>
