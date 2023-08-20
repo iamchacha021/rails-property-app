@@ -1,10 +1,14 @@
-<h1>Editing property</h1>
+<div class='container'>
 
-<%= render "form", property: @property %>
+  <h1>Edit Property</h1>
 
-<br>
+  <%= render "form", property: @property %>
 
-<div>
-  <%= link_to "Show this property", @property, class: 'btn btn-primary'  %> |
-  <%= link_to "Back to properties", properties_path %>
+  <br>
+
+  <div>
+    <%= link_to "Show this property", @property, class: 'btn btn-outline-primary'  %> |
+    <%= link_to "Back to properties", properties_path %>
+  </div>
+
 </div>
